@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestApp.Views.MasterDetailView"
+             xmlns:pages="clr-namespace:TestApp.Views">
+  <MasterDetailPage.Master>
+    <ContentPage>
+        <ListView Margin="2"  ItemsSource="{Binding Items}" SelectedItem="{Binding ActiveItem, Mode=TwoWay}" BackgroundColor="#404040">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding DisplayName}" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="Small"/>
+                            <!--<ContentView cm:View.Model="{Binding}" cm:View.Context="MasterView" />-->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </ContentPage>
+  </MasterDetailPage.Master>
+  <!--<MasterDetailPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <pages:MasterDetailSampleDetail />
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Detail>-->
+</MasterDetailPage>

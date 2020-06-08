@@ -33,7 +33,12 @@ namespace TestApp.Droid
 
         protected override void Configure()
         {
+            LogManager.GetLog = t => new DebugLog(t);
+
             container = new SimpleContainer();
+
+            container.Instance(container);
+
             container.Singleton<App>();
         }
 
